@@ -6,7 +6,7 @@ start_dir = os.path.dirname(os.path.realpath(__file__))
 if not os.path.exists(os.path.join(start_dir, "logs")):
     os.mkdir(os.path.join(start_dir, "logs"))
 logger = logging.getLogger()
-file_handler = logging.handlers.RotatingFileHandler(os.path.join(start_dir, "logs", "server-control.log", maxBytes=10240, backupCount=10))
+file_handler = logging.handlers.RotatingFileHandler(os.path.join(start_dir, "logs", "server-control.log"), maxBytes=10240, backupCount=10)
 file_handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s: %(message)s [line %(lineno)d]"))
 file_handler.setLevel(logging.INFO)
 logger.addHandler(file_handler)
